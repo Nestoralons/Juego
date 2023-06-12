@@ -5,6 +5,8 @@ import confetti from "canvas-confetti";
 import { Square } from "./components/Square";
 import { TURNS } from "./constants";
 import { Winner } from "./components/Winner";
+import { VscGithub } from "react-icons/vsc";
+import { GrLinkedin } from "react-icons/gr";
 
 function App() {
   const [board, setBoard] = useState(() => {
@@ -55,7 +57,7 @@ function App() {
   };
   return (
     <main className="board">
-      <h1>GAME</h1>
+      <h1>3 EN RAYA</h1>
       <button onClick={handleReset}>Empezar de nuevo</button>
       <section className="game">
         {board.map((square, index) => {
@@ -66,9 +68,26 @@ function App() {
           );
         })}
       </section>
+
       <section className="turn">
         <Square isSelected={turn === TURNS.X}>{TURNS.X}</Square>
         <Square isSelected={turn === TURNS.O}>{TURNS.O}</Square>
+      </section>
+      <section className="info">
+        <a
+          href="https://github.com/Nestoralons"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <VscGithub size={{ size: "70px" }} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/nestoralons/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <GrLinkedin size={{ size: "70px" }} />
+        </a>
       </section>
       <Winner winner={winner} handleReset={handleReset} />
     </main>

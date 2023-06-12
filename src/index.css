@@ -118,3 +118,13 @@ body {
   background: #eee;
   color: #222;
 }
+.info {
+  display: flex;
+  height: 120px;
+  width: 120px;
+  column-gap: 15px;
+  justify-content: center;
+  margin: 15px auto;
+
+  position: relative;
+}
